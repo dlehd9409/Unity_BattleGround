@@ -157,6 +157,14 @@ public class ShootBehaviour : GenericBehaviour
         {
             return;
         }
+        else if (weapons[weapon].currentMagCapacity == 0)
+        {
+            if (weapons[weapon].StartReload())
+            {
+                SoundManager.Instance.PlayOneShotEffect((int)weapons[weapon].reloadSound, gunMuzzle.position, 0.5f);
+                behaviourController.GetAnimator.SetBool(reloadBool, true);
+            }
+        }
         else
         {
             burstShotCount++;
