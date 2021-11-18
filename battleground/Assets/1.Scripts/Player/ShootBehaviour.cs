@@ -157,14 +157,6 @@ public class ShootBehaviour : GenericBehaviour
         {
             return;
         }
-        else if (weapons[weapon].currentMagCapacity == 0)
-        {
-            if (weapons[weapon].StartReload())
-            {
-                SoundManager.Instance.PlayOneShotEffect((int)weapons[weapon].reloadSound, gunMuzzle.position, 0.5f);
-                behaviourController.GetAnimator.SetBool(reloadBool, true);
-            }
-        }
         else
         {
             burstShotCount++;
@@ -184,6 +176,12 @@ public class ShootBehaviour : GenericBehaviour
                     if (hit.collider)
                     {
                         hit.collider.SendMessage("HitCallback",new HealthBase.DamageInfo(hit.point, ray.direction, weapons[weapon].bulletDamage, hit.collider),SendMessageOptions.DontRequireReceiver);
+                    }
+                    if (weapons[weapon].currentMagCapacity == 0)
+                    {
+                        weapons[weapon].StartReload();
+                        SoundManager.Instance.PlayOneShotEffect((int)weapons[weapon].reloadSound, gunMuzzle.position, 0.5f);
+                        behaviourController.GetAnimator.SetBool(reloadBool, true);
                     }
                 }
             }

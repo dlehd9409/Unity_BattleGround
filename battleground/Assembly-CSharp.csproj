@@ -72,10 +72,19 @@
     <Compile Include="Assets\1.Scripts\Contents\AlertChecker.cs" />
     <Compile Include="Assets\1.Scripts\Contents\HealthBase.cs" />
     <Compile Include="Assets\1.Scripts\Contents\InteractiveWeapon.cs" />
+    <Compile Include="Assets\1.Scripts\Enemy\CoverLookUp.cs" />
+    <Compile Include="Assets\1.Scripts\Enemy\EnemyAnimation.cs" />
+    <Compile Include="Assets\1.Scripts\Enemy\EnemyVariables.cs" />
+    <Compile Include="Assets\1.Scripts\Enemy\StateMachine\Action\Action.cs" />
+    <Compile Include="Assets\1.Scripts\Enemy\StateMachine\Decision\Decision.cs" />
+    <Compile Include="Assets\1.Scripts\Enemy\StateMachine\State\State.cs" />
+    <Compile Include="Assets\1.Scripts\Enemy\StateMachine\StateController.cs" />
+    <Compile Include="Assets\1.Scripts\Enemy\StateMachine\Transition\Transition.cs" />
     <Compile Include="Assets\1.Scripts\GameData\BaseData.cs" />
     <Compile Include="Assets\1.Scripts\GameData\EffectClip.cs" />
     <Compile Include="Assets\1.Scripts\GameData\EffectData.cs" />
     <Compile Include="Assets\1.Scripts\GameData\EffectList.cs" />
+    <Compile Include="Assets\1.Scripts\GameData\GeneralStats.cs" />
     <Compile Include="Assets\1.Scripts\GameData\SoundClip.cs" />
     <Compile Include="Assets\1.Scripts\GameData\SoundData.cs" />
     <Compile Include="Assets\1.Scripts\GameData\SoundList.cs" />
@@ -96,6 +105,7 @@
     <Compile Include="Assets\1.Scripts\Util\ArrayHelper.cs" />
     <Compile Include="Assets\1.Scripts\Util\SingletonMonobehaviour.cs" />
     <Compile Include="Assets\1.Scripts\Util\VectorHelper.cs" />
+    <Compile Include="Assets\Classes\ClassStats.cs" />
     <None Include="Assets\9.ResourcesData\Resources\HUDeffectData.xml" />
     <None Include="Assets\PolygonBattleRoyale\Shader\DamageZone.shader" />
     <None Include="Assets\9.ResourcesData\Resources\DataeffectData.xml" />
