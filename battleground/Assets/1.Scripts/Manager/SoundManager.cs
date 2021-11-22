@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -491,5 +492,14 @@ public class SoundManager : SingletonMonobehaviour<SoundManager>
         this.FadeOut(0.5f, Interpolate.EaseType.Linear);
         this.currentPlayingType = MusicPlayingType.None;
         StopAllCoroutines();
+    }
+    /// <summary>
+    /// enemy의 클래스에 따라 사격 사운드 변경
+    /// </summary>
+
+    public void PlayShotSound(string ClassID, Vector3 position, float volume)
+    {
+        SoundList sound = (SoundList)Enum.Parse(typeof(SoundList), ClassID.ToLower());
+        PlayOneShotEffect((int)sound, position, volume);
     }
 }
