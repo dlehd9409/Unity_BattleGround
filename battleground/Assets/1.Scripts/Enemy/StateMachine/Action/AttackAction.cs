@@ -31,7 +31,7 @@ public class AttackAction : Action
         muzzleFlash.transform.SetParent(controller.enemyAnimation.gunMuzzle);
         muzzleFlash.transform.localPosition = Vector3.zero;
         muzzleFlash.transform.localEulerAngles = Vector3.left * 90f;
-        DestroyDelayed destroyDelayed = muzzleFlash.GetComponent<DestroyDelayed>();
+        DestroyDelayed destroyDelayed = muzzleFlash.AddComponent<DestroyDelayed>();
         destroyDelayed.DelayTime = 0.5f; // auto destroy
 
         GameObject shotTracer = EffectManager.Instance.EffectOneShot((int)EffectList.tracer, Vector3.zero);

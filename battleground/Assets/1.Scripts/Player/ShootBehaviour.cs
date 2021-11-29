@@ -175,7 +175,7 @@ public class ShootBehaviour : GenericBehaviour
                     DrawShoot(weapons[weapon].gameObject, hit.point, hit.normal, hit.collider.transform, !isOrganic, !isOrganic);
                     if (hit.collider)
                     {
-                        hit.collider.SendMessage("HitCallback",new HealthBase.DamageInfo(hit.point, ray.direction, weapons[weapon].bulletDamage, hit.collider),SendMessageOptions.DontRequireReceiver);
+                        hit.collider.SendMessage("HitCallBack",new HealthBase.DamageInfo(hit.point, ray.direction, weapons[weapon].bulletDamage, hit.collider),SendMessageOptions.DontRequireReceiver);
                     }
                     if (weapons[weapon].currentMagCapacity == 0)
                     {
