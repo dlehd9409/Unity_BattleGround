@@ -82,7 +82,7 @@ public class EnemyHealth : HealthBase
     }
     public override void TakeDamage(Vector3 location, Vector3 direction, float damage, Collider bodyPart = null, GameObject origin = null)
     {
-        if (!IsDead && headShot)
+        if (!IsDead && headShot && bodyPart.transform == anim.GetBoneTransform(HumanBodyBones.Head))
         {
             damage *= 10;
             gameController.SendMessage("HeadShotCallback", SendMessageOptions.DontRequireReceiver);
